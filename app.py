@@ -25,7 +25,6 @@ class cursos(db.Model):
 
 @app.route('/', methods=["GET", "POST"])
 def principal():
-	#frutas = ["Morango", "Uva", "Laranja", "Mamão", "Maçã", "Pêra", "Melão", "Abacaxi"]
 	if request.method == "POST":
 		if request.form.get("fruta"):
 			frutas.append(request.form.get("fruta"))
@@ -34,7 +33,6 @@ def principal():
 
 @app.route('/sobre', methods=["GET", "POST"])
 def sobre():
-	#notas = {"Fulano":5.0, "Beltrano":6.0, "Aluno": 7.0, "Sicrano":8.5, "Rodrigo":9.5}
 	if request.method == "POST":
 		if request.form.get("aluno") and request.form.get("nota"):
 			registros.append({"aluno": request.form.get("aluno"),"nota": request.form.get("nota")})
@@ -109,10 +107,5 @@ def remove_curso(id):
 
 	return redirect(url_for('lista_cursos'))
 
-
-
 if __name__ =="__main__":
 	app.run(debug=True)
-#no prompt quando terminar use o codigo set FLASK_APP= nome do arquivo-app.py
-
-#use set FLASK_ENV=development para atualizar alterações
